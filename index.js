@@ -5,7 +5,7 @@ const btoa = require("btoa");
 
 const beem_url = "https://apisms.beem.africa/v1/send"
 try {
-    const destAddr = core.getInput("dest_addr");
+    const destAddr = core.getInput("dest-addr");
     const message = core.getInput("message")
     const apiKey = core.getInput("api-key")
     const apiSecret = core.getInput("api-scret")
