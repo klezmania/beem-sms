@@ -8,7 +8,7 @@ try {
     const destAddr = core.getInput("dest-addr");
     const message = core.getInput("message")
     const apiKey = core.getInput("api-key")
-    const apiSecret = core.getInput("api-scret")
+    const apiSecret = core.getInput("api-secret")
     let _httpm = new httpm.HttpClient()
     core.debug(`Sending message: ${message}.to ${destAddr}`);
     _httpm.postJson(
@@ -45,5 +45,5 @@ try {
     
 
 } catch (error) {
-     core.setFailed(err);
+     core.setFailed(error);
 }

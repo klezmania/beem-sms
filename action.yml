@@ -1,7 +1,7 @@
 name: 'Send SMS with Beem'
 description: 'Send sms with beem'
 inputs:
-  dest_addr:
+  dest-addr:
     description: "Phone number of the sms receiver"
     required: true
   message:
