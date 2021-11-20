@@ -1,0 +1,25 @@
+name: 'Send SMS with Beem'
+description: 'Send sms with beem'
+inputs:
+  dest_addr:
+    description: "Phone number of the sms receiver"
+    required: true
+  message:
+    description: "The text message to send"
+    required: true
+  api-key:
+    description: "Api key"
+    required: true
+  api-secret:
+    description: "Api secret"
+    required: true
+outputs:
+  status:
+    description: "The status code of the sms sent"
+  success:
+    description: "Success Message"
+  error:
+    description: "Error Message"
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
