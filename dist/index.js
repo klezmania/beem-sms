@@ -8494,7 +8494,7 @@ try {
         ],
       },
       {
-        "Content-Type": content_type,
+        "Content-Type": "application/json",
         Authorization: "Basic " + btoa(apiKey + ":" + apiSecret),
       }
     ).then((res) =>{
