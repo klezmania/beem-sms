@@ -30,7 +30,8 @@ try {
         Authorization: "Basic " + btoa(apiKey + ":" + apiSecret),
       }
     ).then((res) =>{
-        core.setOutput("status", res.code);
+        core.debug(res.result);
+        core.setOutput("status", res.result.code);
         if(res.statusCode == 200){
             core.debug("Message was successfull sent!")
             core.debug(res.result);

@@ -8472,12 +8472,11 @@ const httpm = __nccwpck_require__(9152)
 const btoa = __nccwpck_require__(9367);
 
 const beem_url = "https://apisms.beem.africa/v1/send"
-
 try {
-    const destAddr = core.getInput("dest_addr");
+    const destAddr = core.getInput("dest-addr");
     const message = core.getInput("message")
     const apiKey = core.getInput("api-key")
-    const apiSecret = core.getInput("api-scret")
+    const apiSecret = core.getInput("api-secret")
     let _httpm = new httpm.HttpClient()
     core.debug(`Sending message: ${message}.to ${destAddr}`);
     _httpm.postJson(
@@ -8499,7 +8498,8 @@ try {
         Authorization: "Basic " + btoa(apiKey + ":" + apiSecret),
       }
     ).then((res) =>{
-        core.setOutput("status", res.code);
+        core.debug(res.result);
+        core.setOutput("status", res.result.code);
         if(res.statusCode == 200){
             core.debug("Message was successfull sent!")
             core.debug(res.result);
@@ -8514,7 +8514,7 @@ try {
     
 
 } catch (error) {
-     core.setFailed(err);
+     core.setFailed(error);
 }
 
 })();
