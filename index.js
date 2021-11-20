@@ -14,7 +14,7 @@ try {
     _httpm.postJson(
       beem_url,
       {
-        source_addr: source_addr,
+        source_addr: "INFO",
         schedule_time: "",
         encoding: 0,
         message: message,
